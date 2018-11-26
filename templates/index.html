@@ -1,0 +1,104 @@
+<!doctype html>
+{% load static %}
+<html lang="en" ng-app="musicCatApp">
+  <head>
+    <meta charset="utf-8">
+    <title>Music Library</title>
+    <link rel="stylesheet" href={% static "bower_components/bootstrap/dist/css/bootstrap.css" %}/>
+    <link rel="stylesheet" type="text/css" href={% static "styles/bootstrap-4.1.2/bootstrap.min.css" %}>
+<link href={% static "plugins/font-awesome-4.7.0/css/font-awesome.min.css"  %} rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href={% static "styles/main_styles.css" %}>
+<link rel="stylesheet" type="text/css" href={% static "styles/responsive.css" %}>
+
+<script src={% static "js/jquery-3.2.1.min.js" %}></script>
+<script src={% static "styles/bootstrap-4.1.2/popper.js" %}></script>
+<script src={% static "styles/bootstrap-4.1.2/bootstrap.min.js" %}></script>
+<script src={% static "plugins/scrollmagic/ScrollMagic.min.js" %}></script>
+<script src={% static "js/custom.js" %}></script>
+
+<script src={% static "lib/angular/angular.js" %}></script>
+<script src={% static "js/app.js" %}></script>
+  </head>
+  <body ng-controller="MusicListController">
+
+    <div class="super_container">
+	
+	<!-- Header -->
+
+	<header class="header trans_400">
+		<div class="container">
+			<div class="row">
+				<div class="col">
+					<div class="header_content d-flex flex-row align-items-center justify-content-start trans_400">
+						<div class="logo"><a href={% url "index" %}>Music<span>Library</span></a></div>
+						<nav class="main_nav">
+							<ul class="d-flex flex-row align-items-center justify-content-start">
+								<li class="active"><a href={% url "index" %}>Home</a></li>
+								<li><a href={% url "musics" %}>Browse All</a></li>
+							</ul>
+						</nav>
+						<div class="hamburger ml-auto"><i class="fa fa-bars" aria-hidden="true"></i></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+
+	<!-- Menu -->
+	
+	<div class="menu_overlay trans_400"></div>
+	<div class="menu trans_400">
+		<div class="menu_close_container"><div class="menu_close"><div></div><div></div></div></div>
+		<div class="log_reg">
+			<div class="log_reg_content d-flex flex-row align-items-center justify-content-end">
+				<div class="login log_reg_text"><a href="#">Login</a></div>
+				<div class="register log_reg_text"><a href="#">Register</a></div>
+			</div>
+		</div>
+		<nav class="menu_nav">
+			<ul>
+				<ul>
+					<li class="active"><a href={% url "index" %}>Home</a></li>
+					<li><a href={% url "musics" %} ng-click="myFunc()">Browse All</a></li>
+					<li><a href={% url "index" %}>Albums</a></li>
+					<li><a href={% url "index" %}>Artists</a></li>
+			</ul>
+			</ul>
+		</nav>
+	</div>
+
+	<!-- Home -->
+
+	<div class="home">
+		<div class="background_image" style=""></div>
+		<div class="home_container">
+			<div class="container">
+				<div class="row">
+					<div class="col">
+						<div class="home_content text-center">
+							<div class="home_title">Search Your Favorate Musics</div>
+							<div class="home_text">Our music collection has 100 songs with different genres and artists</div>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-lg-10 offset-lg-1">
+						<div class="domain_search_form_container">
+							<form action="#" id="domain_search_form" class="domain_search_form d-flex flex-md-row flex-column align-items-center justify-content-start">
+								<a href = "{% url 'musics' %}" class="domain_search_button main_search d-flex flex-row align-items-center justify-content-center" ng-click="myFunc()"><img src="images/search.png" alt="">Get Started</a>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="footer">
+		&copy;By Xiaoyi Chen & Xinyi Xu
+	</div>
+
+	
+</div>
+
+  </body>
+</html>

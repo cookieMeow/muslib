@@ -1,0 +1,143 @@
+<!doctype html>
+{% load static %}
+<html lang="en" ng-app="musicCatApp">
+  <head>
+    <meta charset="utf-8">
+    <title>Music Library</title>
+    <link rel="stylesheet" href={% static "bower_components/bootstrap/dist/css/bootstrap.css" %}/>
+    <link rel="stylesheet" type="text/css" href={% static "styles/bootstrap-4.1.2/bootstrap.min.css" %}>
+<link href={% static "plugins/font-awesome-4.7.0/css/font-awesome.min.css" %} rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href={% static "styles/main_styles.css" %}>
+<link rel="stylesheet" type="text/css" href={% static "styles/musics_style.css" %}>
+<link rel="stylesheet" type="text/css" href={% static "styles/responsive.css" %}>
+
+<script src={% static "js/jquery-3.2.1.min.js" %}></script>
+<script src={% static "styles/bootstrap-4.1.2/popper.js" %}></script>
+<script src={% static "styles/bootstrap-4.1.2/bootstrap.min.js" %}></script>
+<script src={% static "plugins/scrollmagic/ScrollMagic.min.js" %}></script>
+
+<script src={% static "js/custom.js" %}></script>
+
+<script src={% static "lib/angular/angular.js" %}></script>
+<script src={% static "js/app.js" %}></script>
+  </head>
+  <body ng-controller="MusicListController">
+
+    <div class="super_container">
+	
+	<!-- Header -->
+
+	<header class="fixed_header scrolled">
+		<div class="container">
+			<div class="row">
+				<div class="col">
+					<div class="fixed_header_content d-flex flex-row align-items-center justify-content-start trans_400">
+						<div class="logo"><a href={% url "index" %}>Music<span>Library</span></a></div>
+						<nav class="main_nav">
+							<ul class="d-flex flex-row align-items-center justify-content-start">
+								<li><a href={% url "index" %}>Home</a></li>
+								<li class="active"><a href={% url "musics" %}>Browse All</a></li>
+							</ul>
+						</nav>
+						<div class="hamburger ml-auto"><i class="fa fa-bars" aria-hidden="true"></i></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+
+	<!-- Menu -->
+	
+	<div class="menu_overlay trans_400"></div>
+	<div class="menu trans_400">
+		<div class="menu_close_container"><div class="menu_close"><div></div><div></div></div></div>
+		<div class="log_reg">
+			<div class="log_reg_content d-flex flex-row align-items-center justify-content-end">
+				<div class="login log_reg_text"><a href="#">Login</a></div>
+				<div class="register log_reg_text"><a href="#">Register</a></div>
+			</div>
+		</div>
+		<nav class="menu_nav">
+			<ul>
+				<li><a href={% url "index" %}>Home</a></li>
+				<li class="active"><a href={% url "musics" %}>Browse All</a></li>
+				<li><a href={% url "index" %}>Albums</a></li>
+				<li><a href={% url "index" %}>Artists</a></li>
+			</ul>
+		</nav>
+	</div>
+
+
+	<div class="music">
+		<div class="side_bar">
+			<h5>Filter By:</h5>
+			<p>Artist:</p>
+			<div ng-repeat="item in artist">
+				
+				<div class="checkbox">
+				  <label><input type="checkbox" name="filter[]" value={[{item.name}]} ng-checked="filter.indexOf(item.name) > -1" ng-click="change(item.name)">{[{item.name}]}({[{item.count}]})</label>
+				</div>
+			</div>
+
+			<p>Album:</p>
+			<div ng-repeat="item in album">
+				
+				<div class="checkbox">
+				  <label><input type="checkbox" name="filter[]" value={[{item.name}]} ng-checked="filter.indexOf(item.name) > -1" ng-click="change(item.name)">{[{item.name}]}({[{item.count}]})</label>
+				</div>
+			</div>
+
+			<p>Genre:</p>
+			<div ng-repeat="item in genre">
+				
+				<div class="checkbox">
+				  <label><input type="checkbox" name="filter[]" value={[{item.name}]} ng-checked="filter.indexOf(item.name) > -1" ng-click="change(item.name)">{[{item.name}]}({[{item.count}]})</label>
+				</div>
+			</div>
+
+		</div>
+		<div class="right_content">
+			<div class="music_container">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-10 offset-lg-1">
+							<div class="domain_search_form_container">
+								<div id="domain_search_form" class="domain_search_form d-flex flex-md-row flex-column align-items-center justify-content-start">
+									<div class="d-flex flex-row align-items-center justify-content-start">
+										<input type="text" class="domain_search_input" placeholder="" required="required">
+										<div class="domain_search_dropdown d-flex flex-row align-items-center justify-content-start">
+											<i class="fa fa-chevron-down" aria-hidden="true"></i>
+											<div class="domain_search_selected">all</div>
+											<ul>
+												<li>all</li>
+											</ul>
+										</div>
+									</div>
+									<button ng-click="myFunc()" class="domain_search_button d-flex flex-row align-items-center justify-content-center"><img src={% static "images/search.png" %} alt="">Search</button>
+								</div>
+							</div>
+							<ul class="search_result">
+						      <li class="search_result_item" ng-repeat="song in rawdata">
+						      	<a target="_blank" href={[{song.url}]}>
+							        <span>{[{song.title}]}</span>
+							        <p>Artist: {[{song.artist}]}</p>
+							        <p>Album: {[{song.album}]}</p>
+							        <p class="inline-block">Length: {[{song.time}]}</p>
+							        <p class="inline-block">Size: {[{song.size}]}</p>
+							        <p class="inline-block">Genre: {[{song.genre}]}</p>
+						    	</a>
+						      </li>
+						    </ul>
+						</div>
+					</div>
+			</div>
+		</div>
+		</div>
+	</div>
+
+
+	
+</div>
+
+  </body>
+</html>
