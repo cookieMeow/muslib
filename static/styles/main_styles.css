@@ -535,6 +535,7 @@ section
 
 .home_container
 {
+	margin-top:100px;
 	position: absolute;
 	left: 0;
 	top: 20%;
@@ -576,7 +577,7 @@ section
 	width: calc(100% - 196px);
 	margin-right: 30px;
 }
-.domain_search_input
+.music_search_input
 {
 	width: calc(100% - 141px);
 	height: 60px;
@@ -590,31 +591,31 @@ section
 	font-weight: 500;
 	color: #1f1d22;
 }
-.domain_search_input::-webkit-input-placeholder
+.music_search_input::-webkit-input-placeholder
 {
 	font-size: 24px !important;
 	font-weight: 500 !important;
 	color: #1f1d22 !important;
 }
-.domain_search_input:-moz-placeholder
+.music_search_input:-moz-placeholder
 {
 	font-size: 24px !important;
 	font-weight: 500 !important;
 	color: #1f1d22 !important;
 }
-.domain_search_input::-moz-placeholder
+.music_search_input::-moz-placeholder
 {
 	font-size: 24px !important;
 	font-weight: 500 !important;
 	color: #1f1d22 !important;
 } 
-.domain_search_input:-ms-input-placeholder
+.music_search_input:-ms-input-placeholder
 { 
 	font-size: 24px !important;
 	font-weight: 500 !important;
 	color: #1f1d22 !important;
 }
-.domain_search_input::input-placeholder
+.music_search_input::input-placeholder
 {
 	font-size: 24px !important;
 	font-weight: 500 !important;
@@ -664,7 +665,7 @@ section
 	opacity: 1;
 }
 
-.domain_search_button
+.music_search_button
 {
 	width: 166px;
 	height: 60px;
@@ -678,11 +679,11 @@ section
 	color: #1f1d22;
 	transition: .5s;
 }
-.domain_search_button img
+.music_search_button img
 {
 	margin-right: 10px;
 }
-.domain_search_button:hover
+.music_search_button:hover
 {
 	background: #FFFFFF;
 }

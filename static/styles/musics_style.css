@@ -44,6 +44,15 @@
     box-shadow: 0px 6px 12px 0px #dbdbdb;
 }
 
+.search_result_item:hover {
+	background-image: url(https://us.123rf.com/450wm/abstract412/abstract4121501/abstract412150100049/35628645-music-background-with-g-clef.jpg?ver=6);
+    background-size: 50%;
+    background-position: right;
+    background-repeat: no-repeat;
+    transition: border 0.2s;
+    transform: scale(1.02);
+}
+
 
 .search_result_item span {
 	font-size: 16px;

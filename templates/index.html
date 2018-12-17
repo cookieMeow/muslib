@@ -59,7 +59,7 @@
 			<ul>
 				<ul>
 					<li class="active"><a href={% url "index" %}>Home</a></li>
-					<li><a href={% url "musics" %} ng-click="myFunc()">Browse All</a></li>
+					<li><a href={% url "musics" %} ng-click="keywordSearch()">Browse All</a></li>
 					<li><a href={% url "index" %}>Albums</a></li>
 					<li><a href={% url "index" %}>Artists</a></li>
 			</ul>
@@ -85,7 +85,7 @@
 					<div class="col-lg-10 offset-lg-1">
 						<div class="domain_search_form_container">
 							<form action="#" id="domain_search_form" class="domain_search_form d-flex flex-md-row flex-column align-items-center justify-content-start">
-								<a href = "{% url 'musics' %}" class="domain_search_button main_search d-flex flex-row align-items-center justify-content-center" ng-click="myFunc()"><img src="images/search.png" alt="">Get Started</a>
+								<a href = "{% url 'musics' %}" class="music_search_button main_search d-flex flex-row align-items-center justify-content-center">Get Started</a>
 							</form>
 						</div>
 					</div>

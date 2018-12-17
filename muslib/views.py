@@ -44,10 +44,7 @@ def search(keywords, filters):
                 result = keyResult
             else:
                 result = [i for i in keyResult if i in result]
-#             for item in keyResult:
-#                 if item not in result:
-#                     result.append(item)
-    print (result)
+
     result1 = []
     if(len(filters) != 0):
         for key in filters:
@@ -57,11 +54,12 @@ def search(keywords, filters):
                 for item in keyResult:
                     if item not in result1:
                         result1.append(item)
-        print(result1)
-        result2 = [i for i in result if i in result1]
+        if(len(keywords) == 0):
+            result2 = result1
+        else:
+            result2 = [i for i in result if i in result1]
     else:
         result2 = result
-    print(result2)
     return result2
 
 
@@ -72,19 +70,13 @@ musicRe = responseRe.json()
 def SearchResult(request):
     if request.method == "POST":
         rec = json.loads(request.body.decode('utf-8'))
-        print(rec)
-        print(rec['keywords'])
 
-        # keywords = request.POST.getlist("keywords")
-        # filters = request.POST.getlist("filters")
         keywords=rec['keywords']
         filters=rec['filters']
-        print(keywords)
-        if (len(keywords) == 0):
+        if (len(keywords) == 0 and len(filters) == 0):
             seaRe = musicRe
         else:
             seaRe = search(keywords, filters)
-        print(seaRe)
         returnRe = {}
         returnRe['album'] = []
         returnRe['artist'] = []

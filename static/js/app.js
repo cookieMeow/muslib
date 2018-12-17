@@ -6,20 +6,21 @@ var musicCatApp = angular.module('musicCatApp', []).config(function($interpolate
 
 musicCatApp.controller('MusicListController', function MusicListController($scope, $http) {
     angular.element(document).ready(function () {
-        $(".domain_search_button").click();
+        $(".music_search_button").click();
     });
 
     $scope.input = [];
     $scope.filter = [];
 
-    $scope.myFunc = function() {
-        console.log('1')
-        if ($(".domain_search_input").val() !== "") {
-            $scope.input = $(".domain_search_input").val().split(' ');
+    $scope.keywordSearch = function() {
+        if ($(".music_search_input").val() !== "") {
+            $scope.input = $(".music_search_input").val().split(' ');
+        }
+        else {
+            $scope.input = [];
         }
         
-        var data = {"keywords":$scope.input, "filters":$scope.filter};
-        console.log(data)
+        var data = {"keywords":$scope.input, "filters":[]};
         $http({
             url: '../SearchResult/',
             method: "POST",

@@ -110,7 +110,7 @@
 	{
 		display: block;
 	}
-	.domain_search_input
+	.music_search_input
 	{
 		height: 50px;
 	}
@@ -118,33 +118,33 @@
 	{
 		height: 50px;
 	}
-	.domain_search_input::-webkit-input-placeholder
+	.music_search_input::-webkit-input-placeholder
 	{
 		font-size: 20px !important;
 	}
-	.domain_search_input:-moz-placeholder
+	.music_search_input:-moz-placeholder
 	{
 		font-size: 20px !important;
 	}
-	.domain_search_input::-moz-placeholder
+	.music_search_input::-moz-placeholder
 	{
 		font-size: 20px !important;
 	} 
-	.domain_search_input:-ms-input-placeholder
+	.music_search_input:-ms-input-placeholder
 	{ 
 		font-size: 20px !important;
 	}
-	.domain_search_input::input-placeholder
+	.music_search_input::input-placeholder
 	{
 		font-size: 20px !important;
 	}
 	.domain_search_selected,
 	.domain_search_dropdown ul li,
-	.domain_search_button
+	.music_search_button
 	{
 		font-size: 20px;
 	}
-	.domain_search_button
+	.music_search_button
 	{
 		height: 50px;
 	}
@@ -236,7 +236,7 @@
 		width: 100%;
 		margin-right: 0;
 	}
-	.domain_search_button
+	.music_search_button
 	{
 		margin-top: 18px;
 	}
@@ -272,35 +272,35 @@
 	{
 		font-size: 36px;
 	}
-	.domain_search_input,
+	.music_search_input,
 	.domain_search_dropdown,
-	.domain_search_button
+	.music_search_button
 	{
 		height: 40px;
 	}
-	.domain_search_input::-webkit-input-placeholder
+	.music_search_input::-webkit-input-placeholder
 	{
 		font-size: 16px !important;
 	}
-	.domain_search_input:-moz-placeholder
+	.music_search_input:-moz-placeholder
 	{
 		font-size: 16px !important;
 	}
-	.domain_search_input::-moz-placeholder
+	.music_search_input::-moz-placeholder
 	{
 		font-size: 16px !important;
 	} 
-	.domain_search_input:-ms-input-placeholder
+	.music_search_input:-ms-input-placeholder
 	{ 
 		font-size: 16px !important;
 	}
-	.domain_search_input::input-placeholder
+	.music_search_input::input-placeholder
 	{
 		font-size: 16px !important;
 	}
 	.domain_search_selected,
 	.domain_search_dropdown ul li,
-	.domain_search_button
+	.music_search_button
 	{
 		font-size: 16px;
 	}
